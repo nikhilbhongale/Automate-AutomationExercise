@@ -20,6 +20,14 @@ export class ProductsPage{
         expect(cleanedCategories).toEqual(actualCategories);
     }
 
+    async validateMenSection(){
+        await this.page.locator(`//div[@class='panel-heading']/h4/a[@href='#Men']`).click();
+        const expectedMenSections = await this.page.locator(`//div[@id='Men']/div/ul/li/a`).allTextContents();
+        const cleanedMenSections = expectedMenSections.map(text => text.trim());
+        const actualMenSections = ['Tshirts', 'Jeans'];
+        expect(cleanedMenSections).toEqual(actualMenSections);
+    }
+        
     async validateWomenSection(){
         await this.page.locator(`//div[@class='panel-heading']/h4/a[@href='#Women']`).click();
         const expectedWomenSections = await this.page.locator(`//div[@id='Women']/div/ul/li/a`).allTextContents();
