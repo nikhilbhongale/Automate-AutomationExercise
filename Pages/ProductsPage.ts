@@ -27,4 +27,10 @@ export class ProductsPage{
         const actualWomenSections = ['Dress', 'Tops', 'Saree'];
         expect(cleanedWomenSections).toEqual(actualWomenSections);
     }
+
+    async validateWomenClothing(){
+        await this.page.locator(`//div[@class='panel-heading']/h4/a[@href='#Women']`).click();
+        await this.page.locator(`//div[@id='Women']/div/ul/li${commonLocators.anchorContainsText('Dress')}`).click();
+        await expect(this.page.locator(commonLocators.h2WithText(`Women - Dress Products`))).toBeVisible();
+    }
 };
