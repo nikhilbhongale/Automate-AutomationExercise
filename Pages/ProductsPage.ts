@@ -41,4 +41,8 @@ export class ProductsPage{
         await this.page.locator(`//div[@id='Women']/div/ul/li${commonLocators.anchorContainsText('Dress')}`).click();
         await expect(this.page.locator(commonLocators.h2WithText(`Women - Dress Products`))).toBeVisible();
     }
+
+    async validateMenClothing(){
+        
+    }
 };
