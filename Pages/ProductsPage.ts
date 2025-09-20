@@ -40,6 +40,10 @@ export class ProductsPage{
         await this.page.locator(`//div[@class='panel-heading']/h4/a[@href='#Women']`).click();
         await this.page.locator(`//div[@id='Women']/div/ul/li${commonLocators.anchorContainsText('Dress')}`).click();
         await expect(this.page.locator(commonLocators.h2WithText(`Women - Dress Products`))).toBeVisible();
+
+        await this.page.locator(`//div[@class='panel-heading']/h4/a[@href='#Women']`).click();
+        await this.page.locator(`//div[@id='Women']/div/ul/li${commonLocators.anchorContainsText('Tops')}`).click();
+        await expect(this.page.locator(commonLocators.h2WithText(`Women - Tops Products`))).toBeVisible();
     }
 
     async validateMenClothing(){
