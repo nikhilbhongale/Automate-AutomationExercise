@@ -44,7 +44,11 @@ export class ProductsPage{
 
     async validateMenClothing(){
         await this.page.locator(`//div[@class='panel-heading']/h4/a[@href='#Men']`).click();
-        await this.page.locator(`//div[@id='Men']/div/ul/li${commonLocators.anchorContainsText('Jeans')}`).click();       
+        await this.page.locator(`//div[@id='Men']/div/ul/li${commonLocators.anchorContainsText('Jeans')}`).click(); 
+        await expect(this.page.locator(commonLocators.h2WithText(`Men - Jeans Products`))).toBeVisible();  
+        
+        await this.page.locator(`//div[@class='panel-heading']/h4/a[@href='#Men']`).click();
         await this.page.locator(`//div[@id='Men']/div/ul/li${commonLocators.anchorContainsText('Tshirts')}`).click();
+        await expect(this.page.locator(commonLocators.h2WithText(`Men - Tshirts Products`))).toBeVisible();
     }
 };
