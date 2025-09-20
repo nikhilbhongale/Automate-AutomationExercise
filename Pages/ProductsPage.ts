@@ -45,5 +45,6 @@ export class ProductsPage{
     async validateMenClothing(){
         await this.page.locator(`//div[@class='panel-heading']/h4/a[@href='#Men']`).click();
         await this.page.locator(`//div[@id='Men']/div/ul/li${commonLocators.anchorContainsText('Jeans')}`).click();       
+        await this.page.locator(`//div[@id='Men']/div/ul/li${commonLocators.anchorContainsText('Tshirts')}`).click();
     }
 };
