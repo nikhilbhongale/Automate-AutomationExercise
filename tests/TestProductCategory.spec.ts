@@ -1,6 +1,6 @@
 import {test} from '../Fixtures/Fixture'
 
-test('Test Product Categories', async({login, product})=>{
+test('Test Product Categories', {tag: ['@ProductCategory','@regression']}, async({login, product})=>{
     await login.logIntoSite();
     await product.goToProductsPage();
     await product.validateProductsCategory();
